@@ -1,0 +1,29 @@
+pragma solidity 0.4.18 <= 0.6.12;
+contract restaurantbill{
+    string rest;
+    string addrs; 
+    int    bill;
+    int   rupees;
+    string restId;
+    string month;
+    
+    function ElectricityBills(string newrest, string newAddrs, int newbill, int newrupees, string newrestId, 
+    string newMonth) public {
+        
+        rest = newrest;
+        addrs = newAddrs;
+        bill = newbill;
+        rupees= newrupees;
+        restId = newrestId;
+        month=newMonth;
+        
+    }
+    function getrestaurantbill() public view returns(string,string,int,int,string, string) {
+        return(rest, addrs, bill, rupees, restId, month);
+    }
+    function setrestaurantbill(string newMonth, int newbill, int newrupees) public{
+        month = newMonth;
+        bill = newbill;
+        rupees = newrupees;
+    }
+}
